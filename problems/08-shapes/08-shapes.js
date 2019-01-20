@@ -21,5 +21,60 @@ Example for printShape("Diamond", 5, "*");
   * 
 */
 function printShape(shape, height, character) {
-  
-}
+  shape=shape.toLowerCase();
+  switch(shape)   {
+     case 'square':
+     for (i = 0; i < height * height; i++) {
+         if (i <height) {
+             let square = "";
+             for(let x = 0; x < height; x ++) {
+               square += character + " ";
+             }
+             console.log(square);
+         }
+       
+     
+ }
+         
+         console.log("");
+ 
+     break;
+ 
+     case 'triangle':
+     for(let i=1; i <= height; i++)
+     {
+         console.log(character.repeat(i));
+      }
+        
+         console.log("");
+ 
+     break;
+ 
+ 
+     case 'diamond':
+     let x;
+     diamond='';
+      for(i = 0; i < height * 2 - 1; i++) {
+      x = i < height ? i : height * 2 - i - 2;
+      diamond += Array(height - x).join(' ') + Array(x + 1).join(character + ' ') + `${character}\n`;
+      }
+     console.log( diamond );
+ 
+         
+         console.log("");
+     break;
+ 
+     default:
+         console.log(`A ${shape} is not a Square/Diamond/Triangle.`);
+      break;
+  }
+ 
+ 
+ 
+ }
+   
+ printShape('diamond',4,'=');
+ printShape('square',5,'#');
+ printShape('triangle',6,'!');
+ printShape('circle',4,'!');
+ 
